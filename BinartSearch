@@ -1,0 +1,30 @@
+ public static void BinarySearch() {
+               int[] ary = {1,2,5,8,10};
+               int arryLength = ary.length;
+               
+             int x =  Bs(5, ary, 0, arryLength - 1);
+              
+               System.out.println(x);
+}      
+           
+           public static int Bs(int SearchInt,int[] ary,int left,int right ) {
+                 if (right >= left) {
+                   int mid = left + (right - left) / 2;
+                     System.out.println("mid-->" + mid);
+                     if (SearchInt == ary[mid]){
+                         
+                         return mid; 
+                     }
+                     if (SearchInt > ary[mid]) {
+                          System.out.println("going right-->" + right);
+                         Bs(SearchInt, ary, mid + 1, right);
+                     }
+                      if (SearchInt < ary[mid]) {
+                          System.out.println("going left-->" + left);
+                         Bs(SearchInt, ary,left, mid - 1);
+                     }
+                 
+                 }
+                 return -1;
+               
+           }
